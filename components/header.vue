@@ -30,7 +30,7 @@
 
 <script setup>
 const navigation = [
-  { name: 'Solutions', href: '#' },
+  { name: 'Blog', href: '/blog' },
   { name: 'Pricing', href: '#' },
   { name: 'Docs', href: '#' },
   { name: 'Company', href: '#' },
