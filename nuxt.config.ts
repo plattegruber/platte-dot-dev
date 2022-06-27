@@ -10,4 +10,8 @@ export default defineNuxtConfig({
       },
       transpile: ['@headlessui/vue']
     },
+    modules: ['@nuxt/content'],
+    server: {
+        host: 'localhost'
+    }
 })
