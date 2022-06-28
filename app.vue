@@ -28,7 +28,7 @@
               </TransitionChild>
               <div class="flex-1 h-0 pt-5 pb-4 overflow-y-auto">
                 <div class="flex-shrink-0 flex items-center px-4">
-                  <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-logo-indigo-600-mark-gray-800-text.svg" alt="Workflow" />
+                  <img src="~/assets/images/headshot.jpg" alt="Platte Gruber" class="inline-block h-12 w-12 rounded-full" />
                 </div>
                 <nav class="mt-5 px-2 space-y-1">
                   <a v-for="item in navigation" :key="item.name" :href="item.href" :class="[item.current ? 'bg-gray-100 text-gray-900' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900', 'group flex items-center px-2 py-2 text-base font-medium rounded-md']">
@@ -36,19 +36,6 @@
                     {{ item.name }}
                   </a>
                 </nav>
-              </div>
-              <div class="flex-shrink-0 flex border-t border-gray-200 p-4">
-                <a href="#" class="flex-shrink-0 group block">
-                  <div class="flex items-center">
-                    <div>
-                      <img class="inline-block h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
-                    </div>
-                    <div class="ml-3">
-                      <p class="text-base font-medium text-gray-700 group-hover:text-gray-900">Tom Cook</p>
-                      <p class="text-sm font-medium text-gray-500 group-hover:text-gray-700">View profile</p>
-                    </div>
-                  </div>
-                </a>
               </div>
             </DialogPanel>
           </TransitionChild>
@@ -65,7 +52,7 @@
       <div class="flex-1 flex flex-col min-h-0 border-r border-gray-200 bg-white">
         <div class="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
           <div class="flex items-center flex-shrink-0 px-4">
-            <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-logo-indigo-600-mark-gray-800-text.svg" alt="Workflow" />
+            <img class="h-8 w-auto" src="~/assets/images/headshot.jpg" alt="Platte Gruber" />
           </div>
           <nav class="mt-5 flex-1 px-2 bg-white space-y-1">
             <a v-for="item in navigation" :key="item.name" :href="item.href" :class="[item.current ? 'bg-gray-100 text-gray-900' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900', 'group flex items-center px-2 py-2 text-sm font-medium rounded-md']">
@@ -73,19 +60,6 @@
               {{ item.name }}
             </a>
           </nav>
-        </div>
-        <div class="flex-shrink-0 flex border-t border-gray-200 p-4">
-          <a href="#" class="flex-shrink-0 w-full group block">
-            <div class="flex items-center">
-              <div>
-                <img class="inline-block h-9 w-9 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
-              </div>
-              <div class="ml-3">
-                <p class="text-sm font-medium text-gray-700 group-hover:text-gray-900">Tom Cook</p>
-                <p class="text-xs font-medium text-gray-500 group-hover:text-gray-700">View profile</p>
-              </div>
-            </div>
-          </a>
         </div>
       </div>
     </div>
