@@ -73,7 +73,7 @@
       <main class="flex-1">
         <div class="py-6">
           <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-            <h1 class="text-2xl font-semibold text-gray-900">Dashboard</h1>
+            <h1 class="text-2xl font-semibold text-gray-900">{{ title }}</h1>
           </div>
           <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
             <!-- Replace with your content -->
@@ -97,10 +97,12 @@ import {
   XIcon,
 } from '@heroicons/vue/outline'
 
+const route = useRoute();
+const title = route.name.includes('blog') ? 'Blog' : 'Home';
 const navigation = [
-  { name: 'Home', href: '/', icon: HomeIcon, current: true },
-  { name: 'Blog', href: '/blog', icon: RssIcon, current: false },
-  { name: 'Projects', href: '#', icon: FolderIcon, current: false }
+  { name: 'Home', href: '/', icon: HomeIcon, current: !route.name.includes('blog') && route.name!== 'projects' },
+  { name: 'Blog', href: '/blog', icon: RssIcon, current: route.name.includes('blog') },
+  { name: 'Projects', href: '#', icon: FolderIcon, current: route.name === 'projects' }
 ]
 
 const sidebarOpen = ref(false)
