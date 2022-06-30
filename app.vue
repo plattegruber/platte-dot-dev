@@ -28,7 +28,7 @@
               </TransitionChild>
               <div class="flex-1 h-0 pt-5 pb-4 overflow-y-auto">
                 <div class="flex-shrink-0 flex items-center px-4">
-                  <img src="~/assets/images/headshot.jpg" alt="Platte Gruber" class="inline-block h-12 w-12 rounded-full" />
+                  <img src="~/assets/images/cropped_headshot.jpg" alt="Platte Gruber" class="inline-block h-12 w-12 rounded-full" />
                 </div>
                 <nav class="mt-5 px-2 space-y-1">
                   <a v-for="item in navigation" :key="item.name" :href="item.href" :class="[item.current ? 'bg-gray-100 text-gray-900' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900', 'group flex items-center px-2 py-2 text-base font-medium rounded-md']">
