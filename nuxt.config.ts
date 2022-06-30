@@ -13,5 +13,10 @@ export default defineNuxtConfig({
     modules: ['@nuxt/content'],
     server: {
         host: 'localhost'
+    },
+    content: {
+      ignores: [
+        'projects'
+      ]
     }
 })

@@ -97,13 +97,28 @@ import {
   XIcon,
 } from '@heroicons/vue/outline'
 
-const route = useRoute();
-const isBlog = route.name.includes('blog') || route.name.includes('slug');
-const title = isBlog ? 'Blog' : 'Home';
+const Routes = {
+  Home: 'Home',
+  Blog: 'Blog',
+  Projects: 'Projects'
+};
+
+const currentRoute = 
+  useRoute().name.includes('blog') || useRoute().name.includes('slug') ? Routes.Blog
+  : useRoute().name.includes('projects') ? Routes.Projects
+  : Routes.Home
+
+let titleFor = route => {
+  if (route === Routes.Blog) return 'Blog'
+  if (route === Routes.Projects) return 'Projects'
+  return 'Home'
+}
+
+const title = titleFor(currentRoute);
 const navigation = [
-  { name: 'Home', href: '/', icon: HomeIcon, current: !isBlog && route.name!== 'projects' },
-  { name: 'Blog', href: '/blog', icon: RssIcon, current: isBlog },
-  { name: 'Projects', href: '#', icon: FolderIcon, current: route.name === 'projects' }
+  { name: 'Home', href: '/', icon: HomeIcon, current: currentRoute === Routes.Home },
+  { name: 'Blog', href: '/blog', icon: RssIcon, current: currentRoute === Routes.Blog },
+  { name: 'Projects', href: '/projects', icon: FolderIcon, current: currentRoute === Routes.Projects }
 ]
 
 const sidebarOpen = ref(false)
