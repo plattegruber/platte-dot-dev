@@ -98,10 +98,11 @@ import {
 } from '@heroicons/vue/outline'
 
 const route = useRoute();
-const title = route.name.includes('blog') ? 'Blog' : 'Home';
+const isBlog = route.name.includes('blog') || route.name.includes('slug');
+const title = isBlog ? 'Blog' : 'Home';
 const navigation = [
-  { name: 'Home', href: '/', icon: HomeIcon, current: !route.name.includes('blog') && route.name!== 'projects' },
-  { name: 'Blog', href: '/blog', icon: RssIcon, current: route.name.includes('blog') },
+  { name: 'Home', href: '/', icon: HomeIcon, current: !isBlog && route.name!== 'projects' },
+  { name: 'Blog', href: '/blog', icon: RssIcon, current: isBlog },
   { name: 'Projects', href: '#', icon: FolderIcon, current: route.name === 'projects' }
 ]
 
