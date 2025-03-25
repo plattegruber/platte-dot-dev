@@ -1,5 +1,6 @@
 <script>
-	import { onMount } from 'svelte';
+	import { base } from '$app/paths';
+	import Link from '$components/Link.svelte';
 
 	// Replace your hardcoded posts with the data loaded by +page.js
 	export let data;
@@ -20,11 +21,11 @@
 				<article
 					class="rounded-lg border border-gray-200 p-6 shadow-sm transition-shadow duration-300 hover:shadow-md"
 				>
-					<a href={`/posts/${post.slug}`} class="no-underline">
+					<Link href={`${base}/posts/${post.slug}`}>
 						<h2 class="mb-2 text-2xl font-bold text-gray-800 transition-colors hover:text-blue-600">
 							{post.title}
 						</h2>
-					</a>
+					</Link>
 					<div class="mb-4">
 						<time class="text-sm text-gray-500"
 							>{new Date(post.date).toLocaleDateString('en-US', {
