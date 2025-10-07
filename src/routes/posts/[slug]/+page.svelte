@@ -23,33 +23,35 @@
 	};
 </script>
 
-<Container className="pt-24 lg:pt-32">
-	<div class="max-w-3xl">
-		<Link href="/" variant="subtle" className="uppercase tracking-[0.3em]">
+<section class="px-6 pt-24 pb-12 lg:px-8 lg:pt-32">
+	<Container className="max-w-3xl text-base leading-7 text-gray-600 dark:text-gray-300">
+		<Link href="/" variant="plain" className="flex items-center gap-2 text-indigo-600 uppercase tracking-[0.3em] dark:text-indigo-300">
 			<span aria-hidden="true">←</span>
-			<span>Back to all posts</span>
+			<span>All posts</span>
 		</Link>
-		<h1 class="mt-6 text-4xl font-bold tracking-tight text-white sm:text-5xl">
+		<p class="mt-6 text-sm font-semibold uppercase tracking-[0.35em] text-indigo-500 dark:text-indigo-300">
+			{formatDate(data.post.metadata.date)}
+		</p>
+		<h1 class="mt-4 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl dark:text-white">
 			{data.post.metadata.title}
 		</h1>
-		<time class="mt-4 block text-sm font-semibold uppercase tracking-[0.35em] text-teal-200" datetime={data.post.metadata.date}>
-			{formatDate(data.post.metadata.date)}
-		</time>
+		<p class="mt-6 text-xl leading-8 text-gray-700 dark:text-gray-200">
+			{data.post.metadata.description}
+		</p>
 		{#if data.post.metadata.tags?.length}
-			<ul class="mt-6 flex flex-wrap gap-2">
+			<ul class="mt-8 flex flex-wrap gap-3">
 				{#each data.post.metadata.tags as tag}
-					<TagPill tag="li">{tag}</TagPill>
+					<TagPill tag="li" tone="light">#{tag}</TagPill>
 				{/each}
 			</ul>
 		{/if}
-	</div>
-</Container>
+	</Container>
+</section>
 
-<Container className="mt-16">
-	<article class="relative isolate overflow-hidden rounded-3xl border border-white/10 bg-white/5 px-6 py-16 shadow-lg shadow-black/20 transition lg:px-12">
-		<div class="pointer-events-none absolute -inset-x-16 -top-24 -z-10 h-64 bg-gradient-to-br from-teal-500/30 via-transparent to-indigo-500/10 opacity-70 blur-3xl" aria-hidden="true"></div>
-		<Prose>
+<section class="px-6 pb-24 lg:px-8">
+	<Container className="max-w-3xl rounded-3xl bg-white/95 px-8 py-16 text-base leading-7 text-gray-600 shadow-2xl ring-1 ring-gray-200/60 backdrop-blur dark:bg-gray-900/85 dark:text-gray-300 dark:ring-white/10">
+		<Prose invert={false} className="text-base leading-7 text-gray-600 dark:text-gray-300">
 			<PostContent />
 		</Prose>
-	</article>
-</Container>
+	</Container>
+</section>
