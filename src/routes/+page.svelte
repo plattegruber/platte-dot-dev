@@ -1,5 +1,4 @@
 <script>
-	import { base } from '$app/paths';
 	import Link from '$components/Link.svelte';
 
 	// Replace your hardcoded posts with the data loaded by +page.js
@@ -21,7 +20,7 @@
 				<article
 					class="rounded-lg border border-gray-200 p-6 shadow-sm transition-shadow duration-300 hover:shadow-md"
 				>
-					<Link href={`${base}/posts/${post.slug}`}>
+				<Link href={`/posts/${post.slug}`}>
 						<h2 class="mb-2 text-2xl font-bold text-gray-800 transition-colors hover:text-blue-600">
 							{post.title}
 						</h2>

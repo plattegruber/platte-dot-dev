@@ -1,5 +1,4 @@
 <script>
-	import { base } from '$app/paths';
 	import Link from '$components/Link.svelte';
 
 	/** @type {import('./$types').PageProps} */
@@ -9,8 +8,8 @@
 
 <div class="mx-auto max-w-3xl px-4 py-8">
 	<article class="prose lg:prose-xl">
-		<header class="not-prose mb-8">
-			<Link href={`${base}/`}>← Back to all posts</Link>
+			<header class="not-prose mb-8">
+				<Link href="/">← Back to all posts</Link>
 			<h1 class="mt-4 mb-2 text-4xl font-bold text-gray-800">{data.post.metadata.title}</h1>
 			<time class="text-gray-500"
 				>{new Date(data.post.metadata.date).toLocaleDateString('en-US', {
