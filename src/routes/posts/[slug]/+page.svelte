@@ -1,6 +1,7 @@
 <script>
 	import Container from '$components/Container.svelte';
 	import Link from '$components/Link.svelte';
+	import Prose from '$components/Prose.svelte';
 	import TagPill from '$components/TagPill.svelte';
 
 	/** @type {import('./$types').PageProps} */
@@ -47,8 +48,8 @@
 <Container className="mt-16">
 	<article class="relative isolate overflow-hidden rounded-3xl border border-white/10 bg-white/5 px-6 py-16 shadow-lg shadow-black/20 transition lg:px-12">
 		<div class="pointer-events-none absolute -inset-x-16 -top-24 -z-10 h-64 bg-gradient-to-br from-teal-500/30 via-transparent to-indigo-500/10 opacity-70 blur-3xl" aria-hidden="true"></div>
-		<div class="prose prose-invert max-w-none">
+		<Prose>
 			<PostContent />
-		</div>
+		</Prose>
 	</article>
 </Container>
