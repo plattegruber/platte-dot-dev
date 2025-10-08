@@ -39,15 +39,16 @@
 	};
 </script>
 
+
 <Container className="pt-24 lg:pt-32">
 	<div class="max-w-3xl">
-		<p class="text-sm font-semibold uppercase tracking-[0.35em] text-teal-300">
+		<p class="text-sm font-semibold uppercase tracking-[0.35em] text-[color:rgba(17,138,178,0.6)]">
 			Development journal
 		</p>
 		<h1 class="mt-6 text-4xl font-bold tracking-tight text-white sm:text-5xl">
 			My Dev Blog
 		</h1>
-		<p class="mt-6 text-lg text-zinc-300">{heroDescription}</p>
+		<p class="mt-6 text-lg text-zinc-300/90">{heroDescription}</p>
 
 		{#if featured}
 			<div class="mt-8 flex flex-wrap items-center gap-4">
@@ -69,26 +70,22 @@
 			{:else}
 				{#each allPosts as post (post.slug)}
 					<article
-						class="group relative isolate overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8 transition duration-300 hover:border-teal-400/60 hover:bg-white/10"
+						class="group rounded-3xl border border-white/5 bg-[#0f161b] p-8 transition duration-300 hover:border-[color:rgba(17,138,178,0.45)]"
 					>
-						<div
-							class="pointer-events-none absolute -inset-x-10 -inset-y-16 -z-10 origin-center bg-gradient-to-br from-teal-500/20 via-transparent to-indigo-500/10 opacity-0 blur-3xl transition duration-300 group-hover:opacity-100"
-							aria-hidden="true"
-						></div>
-						<header class="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.35em] text-teal-200">
-							<span class="h-px w-8 bg-teal-300/60" aria-hidden="true"></span>
+						<header class="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.35em] text-[color:rgba(255,209,102,0.65)]">
+							<span class="h-px w-8 bg-[color:rgba(6,214,160,0.3)]" aria-hidden="true"></span>
 							<time datetime={post.date}>{formatDate(post.date)}</time>
 						</header>
 						<h2 class="mt-6 text-2xl font-semibold tracking-tight text-white transition duration-300 sm:text-3xl">
 							<Link
 								href={`/posts/${post.slug}`}
 								variant="plain"
-								className="group-hover:text-teal-200"
+								className="group-hover:text-[color:var(--color-sun)]"
 							>
 								{post.title}
 							</Link>
 						</h2>
-						<p class="mt-4 text-base leading-relaxed text-zinc-300">{post.description}</p>
+						<p class="mt-4 text-base leading-relaxed text-zinc-300/90">{post.description}</p>
 					{#if post.tags?.length}
 						<ul class="mt-6 flex flex-wrap gap-2">
 							{#each post.tags as tag}
@@ -111,17 +108,17 @@
 			{/if}
 		</div>
 		<aside class="space-y-10 lg:pl-6 xl:pl-12">
-			<div class="rounded-3xl border border-white/10 bg-white/5 p-8">
-				<h2 class="text-sm font-semibold uppercase tracking-[0.35em] text-zinc-300">
+			<div class="rounded-3xl border border-white/5 bg-[#0f161b] p-8">
+				<h2 class="text-sm font-semibold uppercase tracking-[0.35em] text-[color:rgba(17,138,178,0.6)]">
 					About this space
 				</h2>
-				<p class="mt-4 text-sm leading-relaxed text-zinc-400">
+				<p class="mt-4 text-sm leading-relaxed text-zinc-400/90">
 					Notes on crafting interfaces, learning in public, and building thoughtful developer experiences. Expect Svelte deep dives, Tailwind workflow tips, and the occasional detour into product thinking.
 				</p>
 			</div>
 			{#if tags.length}
-				<div class="rounded-3xl border border-white/10 bg-white/5 p-8">
-					<h2 class="text-sm font-semibold uppercase tracking-[0.35em] text-zinc-300">
+				<div class="rounded-3xl border border-white/5 bg-[#0f161b] p-8">
+					<h2 class="text-sm font-semibold uppercase tracking-[0.35em] text-[color:rgba(239,71,111,0.6)]">
 						Topics on rotation
 					</h2>
 					<div class="mt-4 flex flex-wrap gap-2">
@@ -131,11 +128,11 @@
 					</div>
 				</div>
 			{/if}
-			<div class="rounded-3xl border border-white/10 bg-white/5 p-8">
-				<h2 class="text-sm font-semibold uppercase tracking-[0.35em] text-zinc-300">
+			<div class="rounded-3xl border border-white/5 bg-[#0f161b] p-8">
+				<h2 class="text-sm font-semibold uppercase tracking-[0.35em] text-[color:rgba(17,138,178,0.6)]">
 					Stay in the loop
 				</h2>
-				<p class="mt-4 text-sm leading-relaxed text-zinc-400">
+				<p class="mt-4 text-sm leading-relaxed text-zinc-400/90">
 					No formal newsletter yet, but I share new posts and experiments as soon as they are ready.
 				</p>
 				<div class="mt-6">

@@ -9,10 +9,10 @@
 
 	const isExternal = /^([a-z+.-]+:)?\/\//i;
 	const variants = {
-		link: 'inline-flex items-center gap-2 text-teal-300 transition hover:text-teal-200',
+		link: 'inline-flex items-center gap-2 text-[color:rgba(17,138,178,0.8)] transition hover:text-[color:rgba(6,214,160,0.85)]',
 		button:
-			'inline-flex items-center gap-2 rounded-full bg-teal-400 px-5 py-2 text-sm font-semibold text-zinc-950 transition hover:bg-teal-300',
-		subtle: 'inline-flex items-center gap-2 text-zinc-400 transition hover:text-zinc-200',
+			'inline-flex items-center gap-2 rounded-full bg-[color:rgba(6,214,160,0.9)] px-5 py-2 text-sm font-semibold text-[color:var(--color-midnight)] shadow-sm transition hover:bg-[color:var(--color-sun)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--color-sun)]',
+		subtle: 'inline-flex items-center gap-2 text-zinc-400 transition hover:text-[color:rgba(255,209,102,0.75)]',
 		plain: 'inline-flex items-center text-current'
 	};
 
