@@ -3,7 +3,9 @@
 	import Link from '$components/Link.svelte';
 	import Prose from '$components/Prose.svelte';
 	import TagPill from '$components/TagPill.svelte';
-	import headerImage from '$lib/assets/a-digital-docent.png?url';
+	import { base } from '$app/paths';
+
+	const heroImageSrc = `${base}/images/a-digital-docent.png`;
 
 	/** @type {import('./$types').PageProps} */
 	let { data } = $props();
@@ -38,7 +40,7 @@
 		<figure class="mt-8 -mx-6 overflow-hidden bg-[#0d1418] sm:mx-0 sm:rounded-3xl">
 			<div class="relative">
 				<img
-					src={headerImage}
+					src={heroImageSrc}
 					alt="Artful illustration for the Digital Docent article"
 					class="block h-72 w-full object-cover sm:h-[28rem]"
 					loading="lazy"
